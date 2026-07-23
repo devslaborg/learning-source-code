@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+
+body{
+    font-family:Arial;
+    background:#0f172a;
+    color:white;
+    padding:40px;
+}
+
+.box{
+    max-width:600px;
+    margin:auto;
+    background:#1e293b;
+    padding:20px;
+    border-radius:18px;
+    font-size: 15px;
+    line-height: 1.2rem
+}
+
+input{
+    width:90%;
+    padding:9px 12px;
+    border-radius:8px;
+    border:none;
+    font-size:16px;
+}
+
+mark{
+    background:#facc15;
+    padding:3px 6px;
+    border-radius:5px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+  <h2>Search Documentation 🔍</h2>
+  
+  <input id="search" placeholder="Search HTML..." oninput="highlight()">
+  
+  <p id="text"> HTML provides semantic elements. The mark element highlights important words. Learning HTML makes you a better web developer.</p>
+
+</div>
+
+
+<script>
+
+  let content = document.getElementById("text").innerHTML;
+  
+  function highlight(){
+    let value = search.value;
+    
+    text.innerHTML = content.replace(
+      new RegExp(value,"gi"),
+      match => `<mark>${match}</mark>`
+    );
+  }
+
+</script>
+
+
+</body>
+</html>
